@@ -1,0 +1,11 @@
+image_manifest_digest=sha256:fda07796c30e074dab71237681287d60d0cb10418b6645077ae2e006e3aa2043
+config_digest=sha256:c5657a0a96fad9bc905dbc19c77f66493fa754fb22cb405690bbca1d272abc01
+tag=readystack/kubecontrollermanager:v1.36.6-CE-ubuntu24.04-r5
+probe_port=10257
+probe_path=/
+probe_timeout=180
+probe_exec=/usr/local/bin/rs-probe -k https://127.0.0.1:10257/healthz
+verify_boot=oneshot
+verify_oneshot_arg=kube-controller-manager
+verify_oneshot_arg=--version
+verify_oneshot_expect=Kubernetes v1.36.6
